@@ -1,0 +1,112 @@
+package packet;
+
+
+import java.util.Scanner;
+
+public class Main {
+	
+	
+	// km birim fiyatı : 0.10$
+	// 12 yaşından küçükse toplam fiyata %50 indirim.
+	// 12 ve 24 yaş arasındaysa %25 indirim.
+	// 25 ve 65 yaş arasındaysa %5 indirim 
+	// 65 yaşından büyükse %30 indirim.
+	// gidiş dönüş alırsa %20 indirim.
+	// bu koşullara göre uçak bilet fiyatı hesaplayan program.
+	
+	// Simple Calculating Flight Ticket Prices by percents and discounts 
+	
+	public static void f1() {	
+			
+			System.out.println("Something Went Wrong");
+			System.out.println("'At least 100 km can be allowed to fly'");
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner (System.in);
+		
+		System.out.println("Depart And Return: Press '1' ");
+		
+		System.out.println("One Way: Press '2' ");
+		
+		int c = scan.nextInt();
+		
+		if(c == 2) {
+			
+		System.out.println("Type Distance (km) :" );
+		
+		int dis = scan.nextInt();
+		
+		if(dis < 100) {
+			
+			f1();
+		}
+		
+		else {
+			
+			
+		double pr = dis*0.1;
+		
+		System.out.println("Type the age:");
+		
+		int age = scan.nextInt();
+		
+		
+		if(age < 12) {
+			
+			System.out.println(pr-(pr*50/100) + "$");
+		}
+		
+		else if(age >= 12 && age <= 24) {
+			
+			System.out.println(pr-(pr*25/100) + "$");
+			
+		}
+		
+		else if(age >= 25 && age <= 65) {
+			
+			System.out.println(pr-(pr*5/100) + "$");
+			
+		}
+		
+		else {
+			
+			System.out.println(pr-(pr*30/100) + "$");
+		}
+	 }	
+		
+   }
+	else if(c ==1) {
+		
+		
+		System.out.println("Type Distance:");
+		
+		int dis = scan.nextInt();
+		
+		if(dis < 100) {
+			
+			f1();
+		}
+		
+		else {
+		
+		double pr = dis*0.1;
+		
+		System.out.println("Type the age:");
+		
+		int age = scan.nextInt();
+		
+		System.out.println(pr-(pr*20/100) + "$");
+		
+		}
+		
+	}
+		
+		
+		
+		
+  }
+
+}
